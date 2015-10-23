@@ -128,5 +128,16 @@
         android:layout_below="@+id/saveButton"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Date"
+        android:onClick="datePickerListener"
+        android:id="@+id/datebtn"
+        android:layout_below="@+id/textView6"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6" />
+
 
 </RelativeLayout>
