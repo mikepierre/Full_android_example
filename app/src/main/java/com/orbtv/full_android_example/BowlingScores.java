@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.util.Date;
 public class BowlingScores {
 
+    private long id;
     private int game1;
     private int game2;
     private int game3;
@@ -20,6 +21,15 @@ public class BowlingScores {
         this.game3 = game3;
         this.date = date;
     }
+
+    public BowlingScores(long id, long dateEpoch, int game1, int game2, int game3){
+        this.id = id;
+        setDateEpoch(dateEpoch);
+        this.game1 = game1;
+        this.game2 = game2;
+        this.game3 = game3;
+    }
+
 
     public int getGame1(){
         return game1;
@@ -48,6 +58,14 @@ public class BowlingScores {
         return date;
     }
 
+    public long getDateEpoch(){
+        return date.getTime()/1000;
+    }
+
+    public void setDateEpoch(long seconds){
+        date = new Date(seconds * 1000);
+    }
+
     public void setDate(Date date){
         this.date = date;
     }
@@ -60,11 +78,18 @@ public class BowlingScores {
         return (double) calculateSeriesScore() / 3;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String toString() {
         String result;
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        result = df.format(date) + game1+ " "+ game2+ " "+ game3;
+        result = id + df.format(date) + game1+ " "+ game2+ " "+ game3;
         return result;
     }
 }

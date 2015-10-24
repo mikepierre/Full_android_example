@@ -93,10 +93,11 @@ public class MainActivity extends AppCompatActivity {
         if(isValid(score1) && isValid(score2) && isValid(score3)){
             // make object of bowling scores
             BowlingScores bowlingScores;
-            Date dateOfGames = new Date(year, month, day);
+           // Date dateOfGames = new Date(year, month, day);
+            Date dateOfGames = new GregorianCalendar(year, month, day).getTime();
             bowlingScores = new BowlingScores(score1, score2, score3, dateOfGames);
             seriesTotal.setText(" " + bowlingScores.calculateSeriesScore());
-            // get aplication object to add bowling score object to array list
+            // get application object to add bowling score object to array list
             MyBowlingScoresApplication app =
                     (MyBowlingScoresApplication) getApplication();
             app.addBowlingScores(bowlingScores);
