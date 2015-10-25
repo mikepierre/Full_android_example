@@ -126,7 +126,8 @@
         android:text="View Scores"
         android:id="@+id/viewScoresBtn"
         android:layout_below="@+id/saveButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="handleShowHistoryClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

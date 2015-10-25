@@ -3,6 +3,7 @@ package com.orbtv.full_android_example;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button saveButton;
     private Button historyButton;
+    private Button changeDateButton;
     private EditText game1ScoreEditText;
     private EditText game2ScoreEditText;
     private EditText game3ScoreEditText;
@@ -127,7 +129,15 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    public void handleShowHistoryClick(View v){
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+    }
+
     private void setUpViews(){
+        saveButton = (Button) findViewById(R.id.saveButton);
+        changeDateButton = (Button) findViewById(R.id.datebtn);
+        historyButton = (Button) findViewById(R.id.viewScoresBtn);
         game1ScoreEditText = (EditText) findViewById(R.id.game1EditText);
         game2ScoreEditText = (EditText) findViewById(R.id.game2EditText);
         game3ScoreEditText = (EditText) findViewById(R.id.game3EditText);
